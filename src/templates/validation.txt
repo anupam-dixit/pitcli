@@ -1,0 +1,4 @@
+exports._TargetValidation={
+    list:async (req, res) => {
+    }
+}

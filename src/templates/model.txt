@@ -1,0 +1,26 @@
+const {mongoose} = require("mongoose");
+
+const _TargetSchema  = new mongoose.Schema({
+    name:{
+        type:String,
+        required: true,
+    },
+    phone:{
+        type:String,
+        required: true,
+        unique: [true,'Phone already in use'],
+    },
+    role: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:true,
+    },
+},{
+    timestamps: {
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
+    }
+})
+const _Target = mongoose.model('_Target', _TargetSchema)
+
+module.exports = {_Target};

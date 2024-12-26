@@ -1,0 +1,10 @@
+const {_Target} = require("../models/_TargetModel");
+exports._TargetController={
+    list :async (req, res) => {
+        return res.send(pitLib.sendResponse(true,null,null))
+    },
+    create:async function (req, res) {
+        let r = await _Target.create(req.body)
+        return res.send(pitLib.sendResponse(true,null,r))
+    },
+}
