@@ -4,8 +4,8 @@
     "pitcli": "./bin/index.js"
   },
   "type": "module",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "PitCLI is a CLI tool",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

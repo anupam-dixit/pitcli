@@ -13,14 +13,14 @@ import figlet from "figlet";
 import {mvcGenerator} from "../src/commands/mvc-generator.js";
 
 const examples = {
-  "MVC Geneartion": mvcGenerator,
-  "Basic Example": runBasicExample,
-  "Chalk Example": runChalkExample,
-  "Figlet Example": runFigletExample,
-  "Inquirer Example": runInquirerExample,
-  "Inquirer Confirm Example": runInquirerConfirmExample,
-  "Inquirer List Example": runInquirerListExample,
-  "Ora Example": runOraExample,
+  "MVC Generation": mvcGenerator,
+  // "Basic Example": runBasicExample,
+  // "Chalk Example": runChalkExample,
+  // "Figlet Example": runFigletExample,
+  // "Inquirer Example": runInquirerExample,
+  // "Inquirer Confirm Example": runInquirerConfirmExample,
+  // "Inquirer List Example": runInquirerListExample,
+  // "Ora Example": runOraExample,
 };
 console.log(
     chalk.yellow(figlet.textSync("Pitesh Dixit", { horizontalLayout: "full" }))
@@ -30,7 +30,7 @@ inquirer
     {
       type: "list",
       name: "selectedExample",
-      message: "Choose an example to run:",
+      message: "Choose an procedure to run:",
       choices: Object.keys(examples),
     },
   ])
