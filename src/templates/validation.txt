@@ -1,4 +1,35 @@
 exports._TargetValidation={
-    list:async (req, res) => {
-    }
+    list:async (req, res, next) => {
+        let jSchema=Joi.object({
+            _id:Joi.custom(pitLib.joi.oid).optional(),
+        })
+        validation=await jSchema.validate(req.body)
+        if (validation.error){
+            return res.send(pitLib.sendResponse(0,validation.error.message))
+        }
+        next()
+    },
+    create:async (req, res, next) => {
+        next()
+    },
+    update:async (req, res, next) => {
+        let jSchema=Joi.object({
+            _id:Joi.custom(pitLib.joi.oid).required(),
+        })
+        validation=await jSchema.validate(req.body)
+        if (validation.error){
+            return res.send(pitLib.sendResponse(0,validation.error.message))
+        }
+        next()
+    },
+    delete:async (req, res, next) => {
+        let jSchema=Joi.object({
+            _id:Joi.custom(pitLib.joi.oid).required(),
+        })
+        validation=await jSchema.validate(req.body)
+        if (validation.error){
+            return res.send(pitLib.sendResponse(0,validation.error.message))
+        }
+        next()
+    },
 }

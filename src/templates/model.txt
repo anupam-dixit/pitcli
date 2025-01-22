@@ -5,12 +5,7 @@ const _TargetSchema  = new mongoose.Schema({
         type:String,
         required: true,
     },
-    phone:{
-        type:String,
-        required: true,
-        unique: [true,'Phone already in use'],
-    },
-    role: {
+    created_by: {
         type:mongoose.Schema.Types.ObjectId,
         ref:'User',
         required:true,
@@ -20,7 +15,7 @@ const _TargetSchema  = new mongoose.Schema({
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     }
-})
+}).plugin(require('mongoose-aggregate-paginate-v2'))
 const _Target = mongoose.model('_Target', _TargetSchema)
 
 module.exports = {_Target};

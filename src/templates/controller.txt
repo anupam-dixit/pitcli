@@ -7,4 +7,8 @@ exports._TargetController={
         let r = await _Target.create(req.body)
         return res.send(pitLib.sendResponse(true,null,r))
     },
+    update:async function (req, res) {
+        let r = await _Target.findByIdAndUpdate(req.body._id,req.body,{new:true})
+        return res.send(pitLib.sendResponse(true,null,r))
+    },
 }
