@@ -12,6 +12,14 @@ exports._TargetValidation={
         next()
     },
     create:async (req, res, next) => {
+        let jSchema=Joi.object({
+
+        })
+        validation=await jSchema.validate(req.body)
+        if (validation.error){
+            return res.send(pitLib.sendResponse(0,validation.error.message))
+        }
+        req.body.created_by=req.session.user._id
         next()
     },
     update:async (req, res, next) => {
