@@ -41,6 +41,9 @@ export const mvcGenerator = () => {
             fs.writeFileSync("app/validations/"+answers?.title+"Validation.js", readyValidation);
             spinner.info(chalk.blue("Validation"));
         }
+        spinner.succeed(chalk.green(`app.post('/${answers?.title.toLowerCase()}/list', [${answers?.title}Validation.list],async (req, res, next) =>{await Controller.list(req, res,next, ${answers?.title})})`));
+        spinner.succeed(chalk.green(`app.post('/${answers?.title.toLowerCase()}/create', [${answers?.title}Validation.create],${answers?.title}Controller.create)`));
+        spinner.succeed(chalk.green(`app.post('/${answers?.title.toLowerCase()}/update', [${answers?.title}Validation.update],${answers?.title}Controller.update)`));
     })
 
 };
